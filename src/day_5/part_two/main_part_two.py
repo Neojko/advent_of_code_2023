@@ -35,8 +35,6 @@ class MapsPartTwo():
         print("Updating intervals..")
         new_intervals = Intervals()
         while self.intervals.size() > 0:
-            if self.intervals.size() != 8:
-                a = 4
             interval = self.intervals.lst[0]
             is_intersection = False
             for entry in interval_deltas.map.items():
