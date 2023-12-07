@@ -7,6 +7,5 @@ def main():
     puzzle_biddings = Biddings("src/day_7/data/puzzle_input.txt")
     print(puzzle_biddings.get_total_earnings())
 
-
 if __name__ == '__main__':
     main()

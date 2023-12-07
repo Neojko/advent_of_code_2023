@@ -1,7 +1,7 @@
-from card import Card
-from card_repetition import CardRepetition
+from part1.card import Card
+from part1.card_repetition import CardRepetition
 
-class Hand():
+class PokerHand():
     def __init__(self, cards: list[Card]) -> None:
         map = {}
         for card in cards:
@@ -32,7 +32,15 @@ class Hand():
 
     def __lt__(self, other):
         if self.__class__ is other.__class__:
-            for i in range(len(self.card_repetitions)):
+            # Less card repetitions means better hand
+            number_of_card_repetitions = len(self.card_repetitions)
+            other_number_of_card_repetitions = len(other.card_repetitions)
+            if number_of_card_repetitions < other_number_of_card_repetitions:
+                return True
+            if other_number_of_card_repetitions < number_of_card_repetitions:
+                return False
+            # Compare card repetitions one by one until difference
+            for i in range(number_of_card_repetitions):
                 card_repetition = self.card_repetitions[i]
                 other_card_repetition = other.card_repetitions[i]
                 if card_repetition < other_card_repetition:
