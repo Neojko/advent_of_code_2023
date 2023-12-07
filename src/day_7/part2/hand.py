@@ -59,6 +59,7 @@ class Hand():
         if len(self.card_repetitions) == 0:
             card_repetition = CardRepetition(Card.ACE, 5)
             self.card_repetitions.append(card_repetition)
+            return
         best_card_repetition = self.card_repetitions[0]
         best_card_repetition.repetitions += self.number_of_jacks
     
